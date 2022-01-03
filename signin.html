@@ -1,12 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="signin.css" rel="stylesheet" >
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
 </head>
 <body>
-    
+
+    <div class="Topnav">
+        <a class="active" href="menu.html">Menu </a>
+        <a href="signup.html" >Signup</a>
+        <a class="" href="signin.html">Login</a>
+  
+</div>
+
+<div>
+  <!-- for background -->
+  <div class="background"></div>
+
+  <!-- for form container -->
+  <div class="container">
+    <h2>Login</h2>
+    <form  onSubmit="signin(event)">
+
+      <div class="form-item">
+        <span class="material-icons-outlined">
+          account_circle
+        </span>
+        <input type="text" name="user" class="user" placeholder="Email or Username">
+      </div>
+
+      <div class="form-item">
+        <span class="material-icons-outlined">
+          lock
+        </span>
+        <input type="password" name="pass" class="pass" placeholder="password">
+      </div>
+
+      <button type="submit" class="btns" >LOGIN</button>
+      
+
+      <p>Or Login Using</p>
+
+      <div class="options">
+        <button class="fb">Facebook</button>
+        <button class="gl">Google</button>
+      </div>
+
+      <p>New User ? <a href="signup.html"> Create an Account</a></p>
+
+    </form>
+  </div>
+</div>
+
 </body>
 </html>
+<script src="signin.js"></script>
