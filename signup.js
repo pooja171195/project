@@ -2,7 +2,7 @@ document.querySelector('.btns').addEventListener('click', signup)
 
 var userDetails = [];
 
-function signup(e){
+function signup(e) {
     e.preventDefault();
     var user = document.querySelector('.user').value
     var contact = document.querySelector('.contact').value
@@ -15,25 +15,21 @@ function signup(e){
 
     //console.log(user, contact, email)
     var obj = {
-        name: user,
-        contact: contact,
-        emailID: email,
-        password: pass,
-        confirm: confirm,
+            name: user,
+            contact: contact,
+            emailID: email,
+            password: pass,
+            confirm: confirm,
 
-    }
-   // console.log(obj)
+        }
+        // console.log(obj)
     if (pass == confirm) {
         userDetails.push(obj)
         localStorage.setItem("userData", JSON.stringify(userDetails));
-         window.location.href = "login.html"
-        
-    }
-    else{
+        window.location.href = "signin.html"
+
+    } else {
         alert("password doesn't match")
     }
-    // userDetails.push(obj)
-    // localStorage.setItem("userData", JSON.stringify(userDetails));
-    //  window.location.href = "login.html"
-  
+
 }
