@@ -1,27 +1,64 @@
-const search = document.getElementById('search');
-const submit = document.getElementById('submit');
-const random = document.getElementById('random');
-const mealEl = document.getElementById('meal');
-const resultHeading = document.getElementsByClassName('result-heading');
-const single_mealEl = document.getElementById('single-meal');
-//search meals
-function searchMeal(e){
-    e.preventDefault();
+var itemContainer = document.querySelector(".item-container");
 
-    single_mealEl.innerHTML="";
-
-    //get search meal
-    const term = search.value;
-    //console.log(search.value);
-    if(term.trim()){
-        fetch(
-            `https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`
-        ).then((res)=>res.json())
-        .then((data)=>console.log(data));
+async function getData() {
+    try {
+        // let url ="https://www.themealdb.com/api/json/v1/1/random.php";
+        let url = "https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian";
+        let res = await fetch(url);
+        let data = await res.json();
+        displayDish(data);
+        console.log(data);
+    } catch (err) {
+        console.log("Error:", err);
     }
+
+
 }
+getData();
+
+// var products = json.parse(localStorage.setItem("cartItems"))||[];
+
+function displayDish(food) {
+    for (var i = 0; i < food.meals.length; i++) {
+
+        var itemDiv = document.createElement("div");
+        itemDiv.setAttribute("class", "itemDiv");
+
+        var itemPoster = document.createElement("img");
+        var itemName = document.createElement("h2");
+
+        var price = document.createElement("h3");
+        price.textContent = `Price ${Math.floor( Math.random()*100+100)}`;
+        price.setAttribute("class", "price");
+
+        var cart = document.createElement("h2");
+        cart.style.color = "red";
+        cart.innerText = "Add to Cart";
+        cart.setAttribute("class", "cart");
+
+        cart.addEventListener("click", function(event) {
+            showCart(event);
+        });
+
+        itemPoster.src = food.meals[i].strMealThumb;
+        itemName.innerText = food.meals[i].strMeal;
+        itemDiv.append(itemPoster, itemName, price, cart);
+        itemContainer.append(itemDiv);
+
+    }
 
 
 
-//event listerners
-submit.addEventListener('submit',searchMeal);
+}
+var count = 1;
+var cartCount = document.querySelector("#cartCount");
+
+function showCart(event) {
+
+    console.log(count++);
+
+    cartCount.textContent = `Cart${count++}`;
+    cartCount.style.color = "red";
+
+
+}

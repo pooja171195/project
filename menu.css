@@ -1,0 +1,33 @@
+.header {
+    border: 1px solid red;
+    width: 80%;
+    height: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    margin-top: 10px;
+}
+
+.h1 {
+    font: xx-large;
+    font-size: xx-large;
+    ​
+}
+
+.h2 {
+    display: flex;
+    justify-content: end;
+}
+
+.show {
+    width: 80%;
+    border: 1px solid blue;
+    margin: auto;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+img {
+    width: 200px;
+}

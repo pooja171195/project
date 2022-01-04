@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="index.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/index.css">
+
 </head>
+
 <body>
-    <div class="Topnav">
-        <a class="active" href="menu.html">Menu </a>
-        <a href="signup.html" >Signup</a>
-        <a class="" href="signin.html">Login</a>
-        <div class="container">
-            <div class="flex" > <form class="flex" id="submit">
-                <input type="text" id="search" placeholder="Search For Meal">
-                <button class="search-btn" type="submit">Submit</button>
-            </form>
-            <button class="random-btn" id="random">Random</button>
+    <div class="nav-bar">
+
+        <div class="logo">
+            <h1>The Meal</h1>
         </div>
+        <div class="menu">
+            <a href="menu.html">Menu</a>
+            <a href="signin.html">Login</a>
+
+            <a href="signup.html">SignUp</a>
+            <a href="cart.html" id="cartCount">Cart</a>
         </div>
-        <div class="result-heading"></div>
-        <div id="meal"  class="meal"></div>
-        <div id="single-meal"></div>
     </div>
-    
+
+    <div class="item-container">
+
+    </div>
+
+
 </body>
+
 </html>
-<script href="index.js"></script>
+<script src="index.js"></script>
